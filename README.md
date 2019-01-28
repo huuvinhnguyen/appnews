@@ -27,6 +27,7 @@ $ pod install
 [お題 / Coding Challenge](https://moneyforwardvietnam.github.io/example-feed/)
 
 **References**
+
 https://medium.com/@navdeepsingh_2336/creating-an-ios-app-with-mvvm-and-rxswift-in-minutes-b8800633d2e8
 
 https://github.com/ReactiveX/RxSwift
