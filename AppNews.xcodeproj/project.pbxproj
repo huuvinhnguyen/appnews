@@ -11,6 +11,7 @@
 		1815BCAB21FF17FD008F977C /* ArticleListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815BCAA21FF17FD008F977C /* ArticleListViewModelTest.swift */; };
 		1815BCAD21FF2528008F977C /* EqualtableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815BCAC21FF2528008F977C /* EqualtableArray.swift */; };
 		1815BCAF21FF25A4008F977C /* MockArticleListingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815BCAE21FF25A4008F977C /* MockArticleListingClient.swift */; };
+		1815BCB121FF6847008F977C /* TestScheduler+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815BCB021FF6847008F977C /* TestScheduler+Extensions.swift */; };
 		1892681621FC6E5300B73696 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1892681521FC6E5300B73696 /* Article.storyboard */; };
 		1892681821FC731700B73696 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892681721FC731700B73696 /* ArticleCell.xib */; };
 		1892681A21FC736A00B73696 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892681921FC736A00B73696 /* ArticleCell.swift */; };
@@ -49,6 +50,7 @@
 		1815BCAA21FF17FD008F977C /* ArticleListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelTest.swift; sourceTree = "<group>"; };
 		1815BCAC21FF2528008F977C /* EqualtableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualtableArray.swift; sourceTree = "<group>"; };
 		1815BCAE21FF25A4008F977C /* MockArticleListingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockArticleListingClient.swift; sourceTree = "<group>"; };
+		1815BCB021FF6847008F977C /* TestScheduler+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestScheduler+Extensions.swift"; sourceTree = "<group>"; };
 		1892681521FC6E5300B73696 /* Article.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
 		1892681721FC731700B73696 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		1892681921FC736A00B73696 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				1815BCAA21FF17FD008F977C /* ArticleListViewModelTest.swift */,
 				1815BCAC21FF2528008F977C /* EqualtableArray.swift */,
 				1815BCAE21FF25A4008F977C /* MockArticleListingClient.swift */,
+				1815BCB021FF6847008F977C /* TestScheduler+Extensions.swift */,
 				18B7D06921FC529100418813 /* Info.plist */,
 			);
 			path = AppNewsTests;
@@ -440,6 +443,7 @@
 				1815BCAF21FF25A4008F977C /* MockArticleListingClient.swift in Sources */,
 				1815BCAD21FF2528008F977C /* EqualtableArray.swift in Sources */,
 				18B7D06821FC529100418813 /* AppNewsTests.swift in Sources */,
+				1815BCB121FF6847008F977C /* TestScheduler+Extensions.swift in Sources */,
 				1815BCAB21FF17FD008F977C /* ArticleListViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,7 +597,10 @@
 				DEVELOPMENT_TEAM = T78D673J43;
 				INFOPLIST_FILE = AppNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ving.AppNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -610,7 +617,10 @@
 				DEVELOPMENT_TEAM = T78D673J43;
 				INFOPLIST_FILE = AppNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ving.AppNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -627,7 +637,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78D673J43;
 				INFOPLIST_FILE = AppNewsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ving.AppNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -645,7 +659,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T78D673J43;
 				INFOPLIST_FILE = AppNewsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ving.AppNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

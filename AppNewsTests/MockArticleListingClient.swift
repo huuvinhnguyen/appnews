@@ -13,11 +13,10 @@ import RxTest
 
 struct MockArticleListingClient: ListingClient {
     
-    let responses: [ListingResponse]
+    let response: ListingResponse
     
     func loadArticles() -> Single<ListingResponse> {
         
-
-        return .just(responses)
+        return .just(response)
     }
 }
