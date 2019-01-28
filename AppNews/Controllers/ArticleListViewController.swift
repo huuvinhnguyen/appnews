@@ -19,48 +19,36 @@ class ArticleListViewController: UIViewController {
         super.viewDidLoad()
         prepareNibs()
         
-        
         let refreshTrigger = rx.sentMessage(#selector(viewWillAppear)).map { _ in }
         
-        let viewModel = ArticleListViewModel(refreshTrigger: refreshTrigger.asObservable(),
-                                             client: ArticleListingClient())
+        let viewModel = ArticleListViewModel(refreshTrigger: refreshTrigger.asObservable(), client: ArticleListingClient())
         
-        viewModel.articles
-            .bind(to: tableView.rx.items(cellIdentifier: "ArticleCell")) { _, article, cell in
+        viewModel.articles.bind(to: tableView.rx.items(cellIdentifier: "ArticleCell")) { _, article, cell in
                 
-                cell.textLabel?.text = article.title
+                if let articleCell = cell as? ArticleCell {
+                    
+                    let articleCellViewModel = ArticleCellViewModel(article: article)
+                    articleCell.display(viewModel: articleCellViewModel)
+                }
             }
             .disposed(by: disposeBag)
-
+        
+        tableView.rx.modelSelected(Article.self ).subscribe {  [weak self] article in
+            
+            self?.performSegue(withIdentifier: "ArticleDetailViewController", sender: nil)
+        }.disposed(by: disposeBag)
+        
+//        tableView.rx.itemSelected.subscribe { [weak self] indexPath in
+//                let cell = self?.tableview.cellForRow(at: indexPath) as? SomeCellClass
+//                cell.button.isEnabled = false
+            
+                
+//            }
+//            .disposed(by: disposeBag)
     }
     
     private func prepareNibs() {
         
         tableView.register(UINib(nibName: "ArticleCell", bundle: nil), forCellReuseIdentifier: "ArticleCell")
-        
     }
 }
-
-//extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource {
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//        return 3
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as? ArticleCell ?? UITableViewCell()
-//        return cell
-//    }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        performSegue(withIdentifier: "ArticleDetailViewController", sender: nil)
-//    }
-//    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        return 300
-//    }
-//}

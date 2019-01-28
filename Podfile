@@ -10,6 +10,8 @@ target 'AppNews' do
   pod 'RxCocoa',    '~> 4.0'
   pod "Himotoki", "~> 3.1"
   pod 'APIKit', '~> 3.1'
+  pod 'SDWebImage', '~> 4.0'
+
   target 'AppNewsTests' do
     inherit! :search_paths
     # Pods for testing

@@ -16,13 +16,15 @@ struct Article {
     var detail: String
 }
 
-extension Article {
+extension Article: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> Article {
-        return try Article(title: "", description: "", image: "", detail: "")
+        
+        return try Article(title: e <|  "title", description: e <| "description", image: e <| "image", detail: "detail")
     }
 }
 
 func == (lhs: Article, rhs: Article) -> Bool {
+    
     return lhs.title == rhs.title && lhs.description == rhs.description
 }
 

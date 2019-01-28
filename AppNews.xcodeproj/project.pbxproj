@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1815BCA721FE13D6008F977C /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815BCA621FE13D6008F977C /* UIImageView+Extensions.swift */; };
 		1892681621FC6E5300B73696 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1892681521FC6E5300B73696 /* Article.storyboard */; };
 		1892681821FC731700B73696 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1892681721FC731700B73696 /* ArticleCell.xib */; };
 		1892681A21FC736A00B73696 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892681921FC736A00B73696 /* ArticleCell.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		04AC2B88A4921FB1AFBAE446 /* Pods-AppNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppNewsTests/Pods-AppNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1815BCA621FE13D6008F977C /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		1892681521FC6E5300B73696 /* Article.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
 		1892681721FC731700B73696 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		1892681921FC736A00B73696 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1892682921FDC15B00B73696 /* Session+Extensions.swift */,
+				1815BCA621FE13D6008F977C /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -355,6 +359,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,6 +417,7 @@
 				18B7D07721FC5A1300418813 /* ArticleListViewController.swift in Sources */,
 				18B7D07B21FC5E9800418813 /* ArticleDetailViewModel.swift in Sources */,
 				1892682221FDB10400B73696 /* ArticleRequest.swift in Sources */,
+				1815BCA721FE13D6008F977C /* UIImageView+Extensions.swift in Sources */,
 				1892681F21FD965400B73696 /* ArticleListViewModel.swift in Sources */,
 				1892682A21FDC15B00B73696 /* Session+Extensions.swift in Sources */,
 				1892681A21FC736A00B73696 /* ArticleCell.swift in Sources */,
