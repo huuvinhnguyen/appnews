@@ -19,7 +19,7 @@ struct Article {
 extension Article: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> Article {
         
-        return try Article(title: e <|  "title", description: e <| "description", image: e <| "image", detail: "detail")
+        return try Article(title: e <|  "title", description: e <| "description", image: e <| "image", detail: e <| "detail")
     }
 }
 

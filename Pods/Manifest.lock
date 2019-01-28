@@ -10,9 +10,6 @@ PODS:
   - RxSwift (4.1.2)
   - RxTest (4.1.2):
     - RxSwift (~> 4.0)
-  - SDWebImage (4.3.3):
-    - SDWebImage/Core (= 4.3.3)
-  - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
   - APIKit (~> 3.1)
@@ -21,7 +18,6 @@ DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - RxTest (~> 4.0)
-  - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -32,7 +28,6 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - RxTest
-    - SDWebImage
 
 SPEC CHECKSUMS:
   APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
@@ -42,8 +37,7 @@ SPEC CHECKSUMS:
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: f8e6017e8ee26127ffcb854be0896c973f4e3b9c
+PODFILE CHECKSUM: 7411259b3478750705c2afda4bff2d31995e4b39
 
 COCOAPODS: 1.5.0

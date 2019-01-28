@@ -36,11 +36,10 @@ struct ArticleRequest: ArticleAPIRequest {
 extension ArticleRequest {
 
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> ListingResponse {
-        let elements = try decodeArray(object, rootKeyPath: ["articles"]) as [Article]
-
-//        return ListingResponse(articles: [Article(title: "aaaa", description: "ddddd", image: "https://moneyforwardvietnam.github.io/example-feed/images/FP0919-160x160.jpg", detail: ""), Article(title: "bbbbb", description: "ttttt", image: "https://moneyforwardvietnam.github.io/example-feed/images/FP0919-160x160.jpg", detail: "")])
         
-        return ListingResponse(articles: elements)
+        let articles = try decodeArray(object, rootKeyPath: ["articles"]) as [Article]
+
+        return ListingResponse(articles: articles)
 
     }
 }

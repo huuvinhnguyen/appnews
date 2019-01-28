@@ -18,7 +18,9 @@ class ArticleCell: UITableViewCell {
             
             titleLabel.text = viewModel.title
             descriptionLabel.text = viewModel.description
-            articleImageView?.sd_setImage(with: viewModel.imageURL, placeholderImage: UIImage(named: "placeholder"))
+            if let imageURL = viewModel.imageURL {
+                articleImageView.image(fromUrl: imageURL)
+            }
         }
     }
     

@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    public func image(fromUrl urlString: String) {
-        
-        guard let url = URL(string: urlString) else { return }
+    public func image(fromUrl url:URL) {
         
         let theTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             

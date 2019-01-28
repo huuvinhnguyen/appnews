@@ -11,20 +11,18 @@ class ArticleListViewModel {
     
     let articleCellViewModels = [ArticleCellViewModel]()
     
-    
     let articles: Observable<[Article]>
     
     init(
         
-        refreshTrigger: Observable<Void>,
-        client: ListingClient) {
+        refreshTrigger: Observable<Void>, client: ListingClient) {
         
-        articles = refreshTrigger
-            .flatMapLatest { _ -> Single<ListingResponse> in
-                client.loadArticles()
+        articles = refreshTrigger.flatMapLatest { _ -> Single<ListingResponse> in
+            
+                    client.loadArticles()
             }
             .map { $0.articles }
             .startWith([])
-            .share(replay: 1)
+            .share(replay: 0)
     }
 }

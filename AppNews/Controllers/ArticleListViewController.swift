@@ -14,6 +14,7 @@ class ArticleListViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -23,28 +24,29 @@ class ArticleListViewController: UIViewController {
         
         let viewModel = ArticleListViewModel(refreshTrigger: refreshTrigger.asObservable(), client: ArticleListingClient())
         
-        viewModel.articles.bind(to: tableView.rx.items(cellIdentifier: "ArticleCell")) { _, article, cell in
+        viewModel.articles.bind(to: tableView.rx.items(cellIdentifier: "ArticleCell")) {  _, article, cell in
                 
                 if let articleCell = cell as? ArticleCell {
                     
-                    let articleCellViewModel = ArticleCellViewModel(article: article)
-                    articleCell.display(viewModel: articleCellViewModel)
+                let articleCellViewModel = ArticleCellViewModel(article: article)
+                    articleCell.display(viewModel: articleCellViewModel) 
                 }
             }
             .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(Article.self ).subscribe {  [weak self] article in
+        tableView.rx.modelSelected(Article.self ).subscribe(onNext: { [weak self] (article) in
             
-            self?.performSegue(withIdentifier: "ArticleDetailViewController", sender: nil)
-        }.disposed(by: disposeBag)
-        
-//        tableView.rx.itemSelected.subscribe { [weak self] indexPath in
-//                let cell = self?.tableview.cellForRow(at: indexPath) as? SomeCellClass
-//                cell.button.isEnabled = false
+            guard let weakSelf = self else { return }
             
+            if let vc = weakSelf.storyboard?.instantiateViewController(withIdentifier :"ArticleDetailViewController") as? ArticleDetailViewController {
                 
-//            }
-//            .disposed(by: disposeBag)
+                let articleDetailViewModel = ArticleDetailViewModel(article: article)
+                vc.articleDetailViewModel = articleDetailViewModel
+                weakSelf.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }).disposed(by: disposeBag)
+        
     }
     
     private func prepareNibs() {

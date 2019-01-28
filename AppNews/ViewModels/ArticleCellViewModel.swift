@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import SDWebImage
 
-struct ArticleCellViewModel {
+class ArticleCellViewModel {
     
     var imageURL: URL?
     var title: String
