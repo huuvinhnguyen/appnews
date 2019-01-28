@@ -9,9 +9,8 @@
 
 **Things you may want to cover:**
 
-* Ruby version 2.5.3
-[Install ruby on rail](https://gorails.com/setup/osx/10.13-high-sierra)
-
+* Swift version 4.0
+* Xcode 10.1
 
 **How to run**
 
@@ -19,6 +18,7 @@
 - Terminal move to folder
 ```
 $ cd ios-coding-challenge-316
+```
 ```
 $ pod install
 ```
